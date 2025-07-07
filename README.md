@@ -27,6 +27,7 @@ bFlag2 			AT %I\Q* //bool			output of Slave to input of Master
 Aditional Info
 - [This Github Repo](https://github.com/sebvc/EtherCAT-Slave-Interface-Demo)
 - [Infosys Documentation for EtherCAT Slave Optional Interface (CXxxxx-B110)](https://infosys.beckhoff.com/content/1033/b110_ethercat_optioninterface/1893271819.html?id=1772418640633806881)
+- [My Walkthrough](https://github.com/sebvc/EC-Slave-Bridge-Demo/blob/main/Walkthrough.md)
 
 ### Code Disclaimer
 *All sample code provided by Beckhoff Automation LLC are for illustrative purposes only and are provided “as is” and without any warranties, express or implied. Actual implementations in applications will vary significantly. Beckhoff Automation LLC shall have no liability for, and does not waive any rights in relation to, any code samples that it provides or the use of such code samples for any purpose.*
