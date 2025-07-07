@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<VarLinks>
+	<OwnerA Name="TIPC^PLC_MASTER^PLC_MASTER Instance">
+		<OwnerB Name="TIID^Device 1 (EtherCAT)^Box 1 (CX5140 EtherCAT slave)">
+			<Link VarA="PlcTask Inputs^MAIN.bFlag1" VarB="IO Inputs^bFlag"/>
+			<Link VarA="PlcTask Inputs^MAIN.iSlaveCounter1" VarB="IO Inputs^iSlaveCounter"/>
+			<Link VarA="PlcTask Inputs^MAIN.lrSlaveTemp1" VarB="IO Inputs^lrSlaveTemp"/>
+			<Link VarA="PlcTask Outputs^MAIN.bTrigger" VarB="IO Outputs^bTrigger"/>
+			<Link VarA="PlcTask Outputs^MAIN.iMasterCounter" VarB="IO Outputs^iMasterCounter"/>
+			<Link VarA="PlcTask Outputs^MAIN.lrMasterTemp" VarB="IO Outputs^lrMasterTemp"/>
+		</OwnerB>
+		<OwnerB Name="TIID^Device 1 (EtherCAT)^Box 2 (CX5140 EtherCAT slave)">
+			<Link VarA="PlcTask Inputs^MAIN.bFlag2" VarB="IO Inputs^bFlag"/>
+			<Link VarA="PlcTask Inputs^MAIN.iSlaveCounter2" VarB="IO Inputs^iSlaveCounter"/>
+			<Link VarA="PlcTask Inputs^MAIN.lrSlaveTemp2" VarB="IO Inputs^lrSlaveTemp"/>
+			<Link VarA="PlcTask Outputs^MAIN.bTrigger" VarB="IO Outputs^bTrigger"/>
+			<Link VarA="PlcTask Outputs^MAIN.iMasterCounter" VarB="IO Outputs^iMasterCounter"/>
+			<Link VarA="PlcTask Outputs^MAIN.lrMasterTemp" VarB="IO Outputs^lrMasterTemp"/>
+		</OwnerB>
+	</OwnerA>
+</VarLinks>

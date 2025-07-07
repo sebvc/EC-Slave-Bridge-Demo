@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.16" ClassName="CNestedPlcProjDef">
+	<Project GUID="{2F8D75A0-FE45-4E6F-8E30-8EDC68F6565E}" Name="PLC_SLAVE" PrjFilePath="..\..\PLC_SLAVE\PLC_SLAVE.plcproj" TmcFilePath="..\..\PLC_SLAVE\PLC_SLAVE.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
+		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{BBBF0AE0-A4CD-8003-C97D-AB85871FB855}">
+			<Name>PLC_SLAVE Instance</Name>
+			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+			<Vars VarGrpType="2" AreaNo="1">
+				<Name>PlcTask Outputs</Name>
+				<Var>
+					<Name>MAIN.bFlag</Name>
+					<Comment><![CDATA[bool		output to Master]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>MAIN.iSlaveCounter</Name>
+					<Comment><![CDATA[integer	output to Master]]></Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>MAIN.lrSlaveTemp</Name>
+					<Comment><![CDATA[lreal		output to Master]]></Comment>
+					<Type>LREAL</Type>
+				</Var>
+			</Vars>
+			<Vars VarGrpType="1">
+				<Name>PlcTask Inputs</Name>
+				<Var>
+					<Name>MAIN.iMasterCounter</Name>
+					<Comment><![CDATA[integer 	input from Master]]></Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>MAIN.bTrigger</Name>
+					<Comment><![CDATA[bool 		input from Master]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>MAIN.lrMasterTemp</Name>
+					<Comment><![CDATA[lreal		input from Master]]></Comment>
+					<Type>LREAL</Type>
+				</Var>
+			</Vars>
+			<Contexts>
+				<Context>
+					<Id>0</Id>
+					<Name>PlcTask</Name>
+					<ManualConfig>
+						<OTCID>#x02010030</OTCID>
+					</ManualConfig>
+					<Priority>20</Priority>
+					<CycleTime>10000000</CycleTime>
+				</Context>
+			</Contexts>
+			<TaskPouOids>
+				<TaskPouOid Prio="20" OTCID="#x08502001"/>
+			</TaskPouOids>
+		</Instance>
+	</Project>
+	<Mappings>
+		<OwnerA Name="PLC_SLAVE Instance">
+			<OwnerB Name="TIID^Device 4 (EtherCAT Slave)">
+				<Link VarA="PlcTask Inputs^MAIN.bTrigger" VarB="Inputs^bTrigger"/>
+				<Link VarA="PlcTask Inputs^MAIN.iMasterCounter" VarB="Inputs^iMasterCounter"/>
+				<Link VarA="PlcTask Inputs^MAIN.lrMasterTemp" VarB="Inputs^lrMasterTemp"/>
+				<Link VarA="PlcTask Outputs^MAIN.bFlag" VarB="Outputs^bFlag"/>
+				<Link VarA="PlcTask Outputs^MAIN.iSlaveCounter" VarB="Outputs^iSlaveCounter"/>
+				<Link VarA="PlcTask Outputs^MAIN.lrSlaveTemp" VarB="Outputs^lrSlaveTemp"/>
+			</OwnerB>
+		</OwnerA>
+	</Mappings>
+</TcSmItem>

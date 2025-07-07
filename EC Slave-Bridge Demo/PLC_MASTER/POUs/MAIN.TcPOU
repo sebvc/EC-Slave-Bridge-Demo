@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="MAIN" Id="{1e1011f4-32ec-4a5f-a364-6ea656a779f8}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN//EtherCAT Master side
+VAR
+	iMasterCounter 	AT %Q* : INT;	//integer 	input from Master
+	lrMasterTemp 	AT %Q* : LREAL;	//lreal		input from Master
+	bTrigger 		AT %Q* : BOOL;	//bool 		input from Master
+	
+	iSlaveCounter1 	AT %I* : INT;	//integer	output to Master
+	lrSlaveTemp1 	AT %I* : LREAL;	//lreal		output to Master
+	bFlag1 			AT %I* : BOOL;	//bool		output to Master
+	iSlaveCounter2 	AT %I* : INT;	//integer	output to Master
+	lrSlaveTemp2 	AT %I* : LREAL;	//lreal		output to Master
+	bFlag2 			AT %I* : BOOL;	//bool		output to Master
+
+	lag1,lag2: INT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//EtherCAT Master side
+lag1:=iMasterCounter-iSlaveCounter1;
+lag2:=iMasterCounter-iSlaveCounter2;
+
+iMasterCounter:= iMasterCounter+1;
+lrMasterTemp;
+bTrigger;
+
+iSlaveCounter1;
+lrSlaveTemp1;
+bFlag1;
+
+iSlaveCounter2;
+lrSlaveTemp2;
+bFlag2;
+
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

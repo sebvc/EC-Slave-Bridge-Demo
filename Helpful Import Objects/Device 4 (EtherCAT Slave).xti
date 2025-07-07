@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.16" ClassName="CDevEtherCATSlaveDef" SubType="130">
+	<DataTypes>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-00000000003D}" TcBaseType="true" HideType="true">USINTARR6</Name>
+			<BitSize>48</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000002}">USINT</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>6</Elements>
+			</ArrayInfo>
+		</DataType>
+	</DataTypes>
+	<Device Id="4" CreateSymbols="true" DevType="130" AmsNetId="10.200.70.1.5.255" RemoteName="Device 4 (EtherCAT Slave)">
+		<Name>__FILENAME__</Name>
+		<AddressInfo>
+			<Ccat>
+				<Address>-801112064</Address>
+				<Offset>65536</Offset>
+				<Size>65536</Size>
+				<BaseAddr>0</BaseAddr>
+				<BusNo>3</BusNo>
+				<SlotNo>0</SlotNo>
+				<VendorId>5612</VendorId>
+				<DeviceId>20480</DeviceId>
+				<TimeSize>128</TimeSize>
+				<TimeOffs>1024</TimeOffs>
+				<GpioSize>32</GpioSize>
+				<GpioOffs>768</GpioOffs>
+			</Ccat>
+		</AddressInfo>
+		<Vars VarGrpType="1" InsertType="1">
+			<Name>Inputs</Name>
+			<Var>
+				<Name>iMasterCounter</Name>
+				<Type>INT</Type>
+			</Var>
+			<Var>
+				<Name>lrMasterTemp</Name>
+				<Type>LREAL</Type>
+				<BitOffs>16</BitOffs>
+				<ExternalAddress>2</ExternalAddress>
+			</Var>
+			<Var>
+				<Name>bTrigger</Name>
+				<Type>BOOL</Type>
+				<BitOffs>80</BitOffs>
+				<ExternalAddress>10</ExternalAddress>
+			</Var>
+		</Vars>
+		<Vars VarGrpType="2" InsertType="1">
+			<Name>Outputs</Name>
+			<Var>
+				<Name>lrSlaveTemp</Name>
+				<Type>LREAL</Type>
+				<BitOffs>8</BitOffs>
+				<ExternalAddress>2</ExternalAddress>
+			</Var>
+			<Var>
+				<Name>bFlag</Name>
+				<Type>BOOL</Type>
+				<BitOffs>72</BitOffs>
+				<ExternalAddress>10</ExternalAddress>
+			</Var>
+			<Var>
+				<Name>iSlaveCounter</Name>
+				<Type>INT</Type>
+				<BitOffs>80</BitOffs>
+				<ExternalAddress>10</ExternalAddress>
+			</Var>
+		</Vars>
+		<Vars VarGrpType="3">
+			<Name>InfoData</Name>
+			<Var>
+				<Name>State</Name>
+				<Comment><![CDATA[0x___1 = Slave is in 'INIT' state
+0x___2 = Slave is in 'PREOP' state
+0x___4 = Slave is in 'SAFEOP' state
+0x___8 = Slave is in 'OP' state]]></Comment>
+				<Type>UINT</Type>
+				<BitOffs>88</BitOffs>
+				<InOut>0</InOut>
+			</Var>
+			<Var>
+				<Name>NetId</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000003D}">USINTARR6</Type>
+				<BitOffs>104</BitOffs>
+				<InOut>0</InOut>
+			</Var>
+		</Vars>
+		<Image Id="5" AddrType="1" ImageType="2">
+			<Name>Image</Name>
+		</Image>
+		<EtherCATSlave GpioValueFromEsc="1"/>
+	</Device>
+	<Mappings>
+		<OwnerA Name="__THIS__">
+			<OwnerB Name="TIPC^PLC_SLAVE^PLC_SLAVE Instance">
+				<Link VarA="Inputs^bTrigger" VarB="PlcTask Inputs^MAIN.bTrigger"/>
+				<Link VarA="Inputs^iMasterCounter" VarB="PlcTask Inputs^MAIN.iMasterCounter"/>
+				<Link VarA="Inputs^lrMasterTemp" VarB="PlcTask Inputs^MAIN.lrMasterTemp"/>
+				<Link VarA="Outputs^bFlag" VarB="PlcTask Outputs^MAIN.bFlag"/>
+				<Link VarA="Outputs^iSlaveCounter" VarB="PlcTask Outputs^MAIN.iSlaveCounter"/>
+				<Link VarA="Outputs^lrSlaveTemp" VarB="PlcTask Outputs^MAIN.lrSlaveTemp"/>
+			</OwnerB>
+		</OwnerA>
+	</Mappings>
+</TcSmItem>

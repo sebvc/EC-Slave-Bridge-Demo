@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<VarLinks>
+	<OwnerA Name="TIPC^PLC_SLAVE^PLC_SLAVE Instance">
+		<OwnerB Name="TIID^Device 4 (EtherCAT Slave)">
+			<Link VarA="PlcTask Inputs^MAIN.bTrigger" VarB="Inputs^bTrigger"/>
+			<Link VarA="PlcTask Inputs^MAIN.iMasterCounter" VarB="Inputs^iMasterCounter"/>
+			<Link VarA="PlcTask Inputs^MAIN.lrMasterTemp" VarB="Inputs^lrMasterTemp"/>
+			<Link VarA="PlcTask Outputs^MAIN.bFlag" VarB="Outputs^bFlag"/>
+			<Link VarA="PlcTask Outputs^MAIN.iSlaveCounter" VarB="Outputs^iSlaveCounter"/>
+			<Link VarA="PlcTask Outputs^MAIN.lrSlaveTemp" VarB="Outputs^lrSlaveTemp"/>
+		</OwnerB>
+	</OwnerA>
+</VarLinks>
